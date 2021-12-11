@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C6C6C6"
+    tools:context=".ui.CalendarActivity">
+
+    <include
+        android:id="@+id/include2"
+        layout="@layout/header"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/calendarText"
+        android:layout_width="275dp"
+        android:layout_height="60dp"
+        android:fontFamily="arial"
+        android:text="@string/titleCalendar"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.251" />
+
+    <TableLayout
+        android:layout_width="404dp"
+        android:layout_height="400dp"
+        android:isScrollContainer="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.951">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#4CAF50"
+            android:padding="5dp">
+
+            <TextView
+                android:width="133dp"
+                android:height="25dp"
+                android:fontFamily="arial"
+                android:text="@string/sectorText"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:width="133dp"
+                android:height="25dp"
+                android:fontFamily="arial"
+                android:text="@string/dayText"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:width="133dp"
+                android:height="25dp"
+                android:fontFamily="arial"
+                android:text="@string/horarioText"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <TextView
+                android:width="133dp"
+                android:fontFamily="arial"
+                android:text="Andalue"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:width="133dp"
+                android:fontFamily="arial"
+                android:text="Lunes y Jueves"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:width="133dp"
+                android:fontFamily="arial"
+                android:text="De 9:00 a 12:00"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <TextView
+                android:width="133dp"
+                android:fontFamily="arial"
+                android:text="Boca Sur"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:width="133dp"
+                android:fontFamily="arial"
+                android:text="Martes y Viernes"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:width="133dp"
+                android:fontFamily="arial"
+                android:text="De 10:00 a 13:00"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <TextView
+                android:width="133dp"
+                android:fontFamily="arial"
+                android:text="El Recodo"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:width="133dp"
+                android:fontFamily="arial"
+                android:text="Miércoles y Sábados"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:width="133dp"
+                android:fontFamily="arial"
+                android:text="De 9:00 a 12:00"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <TextView
+                android:width="133dp"
+                android:fontFamily="arial"
+                android:text="Lomas Coloradas"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:width="133dp"
+                android:fontFamily="arial"
+                android:text="Lunes y Miércoles"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:width="133dp"
+                android:fontFamily="arial"
+                android:text="De 10:00 a 13:00"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <TextView
+                android:width="133dp"
+                android:fontFamily="arial"
+                android:text="Michaihue"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:width="133dp"
+                android:fontFamily="arial"
+                android:text="Viernes y Miércoles"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:width="133dp"
+                android:fontFamily="arial"
+                android:text="De 9:00 a 12:00"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+        </TableRow>
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

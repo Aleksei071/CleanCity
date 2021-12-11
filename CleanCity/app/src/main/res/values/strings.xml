@@ -1,0 +1,88 @@
+<resources>
+    <string name="app_name">CleanCity</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+    <!-- String related to fixed text -->
+    <string name="help_sign">Ayuda</string>
+    <string name="searchPageText">Busqueda de Camiones</string>
+    <string name="sectorText">Sector</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_help">HelpActivity</string>
+    <string name="calendar_button">Ver Calendario</string>
+    <string name="edit_btn">Actualizar</string>
+    <string name="back_btn">Volver</string>
+    <string name="nameText">Nombre</string>
+    <string name="apellidoText">Apellido</string>
+    <string name="sexoText">Sexo</string>
+    <string name="sexoRadio">Masculino</string>
+    <string name="sexo2Radio">Femenino</string>
+    <string name="calleText">Direccion</string>
+    <string name="telefonoText">Telefono</string>
+    <string name="emailText">Correo</string>
+    <string name="passwordText">Contraseña</string>
+    <string name="password2Text">Confirmar Contraseña</string>
+    <string name="titlePerfil">Editar Información</string>
+    <string name="titleCalendar">Calendario de Recorrido de Camiones</string>
+    <string name="dayText">Días</string>
+    <string name="horarioText">Horario</string>
+    <string name="deleteProfile">Eliminar</string>
+    <string name="cachureo">Ruta del Cachureo</string>
+    <string name="solicitudEscombros">Solicitud de Escombros</string>
+    <string name="escrombrosText">Retiro de Escombros</string>
+    <string name="fullnameText">Nombre Completo</string>
+    <string name="tiposEscombrosTxt">Tipos de Escombros</string>
+
+    <!-- String related to google maps -->
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_scrolling">ScrollingActivity</string>
+    <string name="large_text">
+         - Encuentra "Ubicación” <br /><br />
+         - Desliza dos dedos hacia abajo desde el borde superior de la pantalla. <br /><br />
+         - Selecciona el ícono de Ajustes. <br /><br />
+         - Selecciona Ubicación. <br /><br />
+         - Activa o desactiva el GPS. <br /><br />
+         - Selecciona el indicador para activar o desactivar la función. <br /><br />
+         - Si activas el uso de la posición GPS, tu celular puede encontrar tu posición con ayuda del GPS. <br /><br />
+         - Si desactivas la función, no podrás usar algunas funciones del celular que dependen del GPS. <br /><br />
+         - Activa o desactiva el uso de la posición GPS para las aplicaciones. <br /><br />
+         - Selecciona Permisos de aplicación. <br /><br />
+         - Selecciona el ajuste deseado. <br /><br />
+         - Presiona dos veces la tecla de Retroceso. <br /><br />
+         - Elige el método de posicionamiento. <br /><br />
+         - Selecciona Precisión de la ubicación de Google. <br /><br />
+         - Si seleccionas el indicador junto a “Mejorar la precisión de la ubicación” para activar la función, el celular puede encontrar tu posición exacta con ayuda de los satélites de GPS <br /><br />
+         , de la red móvil y de la red Wi-Fi localizada en las cercanías. El GPS por satélite requiere que tu equipo móvil esté al aire libre. <br /><br />
+         - Si seleccionas el indicador junto a “Mejorar la precisión de la ubicación” para desactivar la función, el celular puede encontrar tu posición exacta con ayuda de los satélites GPS <br /><br />
+         , pero puede demorar ya que no tiene acceso a las informaciones suplementarias de la red móvil o de la red Wi-Fi localizada en las cercanías. <br /><br />
+         - Vuelve a la pantalla de inicio. <br /><br />
+         - Presiona la tecla de Inicio para terminar y volver a la pantalla de inicio.
+    </string>
+    <string name="action_settings">Settings</string>
+    <string name="tosText">Acepto los Terminos y Condiciones</string>
+    <string name="rutText">RUT</string>
+    <string name="registerText">Crear Cuenta</string>
+    <string name="registerTitleText">Registro</string>
+    <string name="rutExText">12345678–9</string>
+    <string name="passHint">********</string>
+    <string name="loginTitle">LOGIN</string>
+    <string name="userLoginText">Rut del Usuario</string>
+    <string name="userLoginHint">12345678–9</string>
+    <string name="loginBtnText">INGRESAR</string>
+    <string name="perfil">Perfil</string>
+    <string name="nombre_completo">Nombre Completo</string>
+    <string name="hintEmail">email@email.com</string>
+    <string name="enviarBtn">Enviar</string>
+    <string name="descRetiro">Descripcion Retiro de Escombros</string>
+    <string name="hintDescRetiro">maximo 4 lineas</string>
+    <string name="rutaCachureo">Ruta del Cachureo</string>
+    <string name="rutaTxt">Ruta</string>
+</resources>
