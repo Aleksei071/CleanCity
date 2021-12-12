@@ -3,7 +3,6 @@ package com.example.cleancity.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Looper;
-import android.os.Parcelable;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,18 +11,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cleancity.R;
-import com.example.cleancity.api.RecorridoConexion;
 import com.example.cleancity.api.UsuarioConexion;
-import com.example.cleancity.interfaces.ICallBackRecorrido;
 import com.example.cleancity.interfaces.ICallBackUsuario;
-import com.example.cleancity.modelos.RecorridoModelo;
 import com.example.cleancity.modelos.UsuarioModelo;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -58,9 +50,7 @@ public class LoginActivity extends AppCompatActivity implements Serializable {
             try {
                 conn.buscar(user, new ICallBackUsuario() {
                     @Override
-                    public void retornar(List<UsuarioModelo> resultado) {
-
-                    }
+                    public void retornar(List<UsuarioModelo> resultado) { }
 
                     @Override
                     public void retorno(UsuarioModelo resultado) {

@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         super.onResume();
         if(_map != null){
             LatLng myPos = new LatLng(-36.838338,-73.106981);
-            _map.animateCamera(CameraUpdateFactory.newLatLngZoom(myPos, 12));
+            _map.animateCamera(CameraUpdateFactory.newLatLngZoom(myPos, 15));
         }
         map.onResume();
     }

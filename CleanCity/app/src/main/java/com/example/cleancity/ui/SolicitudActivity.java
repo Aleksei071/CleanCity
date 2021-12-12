@@ -91,16 +91,28 @@ public class SolicitudActivity extends AppCompatActivity {
         sol.setRutUser(rut);
         sol.setFecha(fecha);
 
-        Log.d("RESPONSE", sol.toString());
-
-        try {
-            connSol.insertar(sol, funciono -> { });
-            Toast.makeText(getApplicationContext(), "Se ha enviado la solicitud", Toast.LENGTH_LONG).show();
-            Intent I = new Intent(getBaseContext(), MainActivity.class);
-            I.putExtra("Usuario", rut);
-            startActivity(I);
-            finish();
-        } catch (Exception e) { Log.d("RESPONSE", e.getMessage()); }
+        if (sector.length()==0){
+            sector.requestFocus();
+            sector.setError("Este campo no puede estar vacio");
+        } else if (dir.length()==0){
+            dir.requestFocus();
+            dir.setError("Este campo no puede estar vacio");
+        } else if (tipo.length()==0) {
+            tipo.requestFocus();
+            tipo.setError("Este campo no puede estar vacio");
+        } else if (desc.length()==0) {
+            correo.requestFocus();
+            correo.setError("Este campo no puede estar vacio");
+        } else {
+            try {
+                connSol.insertar(sol, funciono -> { });
+                Toast.makeText(getApplicationContext(), "Se ha enviado la solicitud", Toast.LENGTH_LONG).show();
+                Intent I = new Intent(getBaseContext(), MainActivity.class);
+                I.putExtra("Usuario", rut);
+                startActivity(I);
+                finish();
+            } catch (Exception e) { Log.d("RESPONSE", e.getMessage()); }
+        }
     }
 
     @Override
