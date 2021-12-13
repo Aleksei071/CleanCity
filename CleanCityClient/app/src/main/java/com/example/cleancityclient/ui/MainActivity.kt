@@ -95,10 +95,10 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
                 override fun onPermissionDenied(permissionDeniedResponse: PermissionDeniedResponse?) {
                     /*Intent intent = new Intent();
-                intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-                Uri uri = Uri.fromParts("package", getPackageName(),"" );
-                intent.setData(uri);
-                startActivity(intent);*/
+                    intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                    Uri uri = Uri.fromParts("package", getPackageName(),"" );
+                    intent.setData(uri);
+                    startActivity(intent);*/
                     val handler = Handler()
                     val builder = AlertDialog.Builder(this@MainActivity)
                     builder.setMessage("Para mostrar su ubicacion necesita activar el servicio de ubicacion en su celular")

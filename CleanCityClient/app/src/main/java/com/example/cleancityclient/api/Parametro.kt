@@ -9,7 +9,6 @@ class Parametro() {
         this.valor = valor.toString()
     }
 
-
     fun getNombre(): String? {
         return nombre
     }

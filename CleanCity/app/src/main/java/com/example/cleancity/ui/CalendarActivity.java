@@ -12,8 +12,8 @@ import com.example.cleancity.R;
 import java.util.Objects;
 
 public class CalendarActivity extends AppCompatActivity {
-    ImageView ProfileImg, HelpIMG;
-    String rut;
+    private ImageView ProfileImg, HelpIMG;
+    private String rut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

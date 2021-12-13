@@ -37,18 +37,18 @@
             android:layout_width="180dp"
             android:layout_height="40dp"
             android:layout_marginStart="131dp"
-            android:layout_marginTop="751dp"
             android:layout_marginEnd="132dp"
             android:layout_marginBottom="1dp"
-            android:text="@string/registerText"
             android:backgroundTint="#05980B"
             android:fontFamily="arial"
+            android:text="@string/registerText"
             android:textColor="#000000"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/pass2TextBox"
+            app:layout_constraintVertical_bias="0.16" />
 
         <TextView
             android:id="@+id/rutText"
@@ -123,12 +123,14 @@
             android:importantForAutofill="no"
             android:inputType="textPassword"
             android:textColor="#000000"
-            android:textSize="16sp"
             android:textColorHint="#5A5A5A"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/lastnameText"
@@ -447,24 +449,5 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <CheckBox
-            android:id="@+id/tosCheck"
-            android:layout_width="380dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="670dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="90dp"
-            android:fontFamily="arial"
-            android:text="@string/tosText"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

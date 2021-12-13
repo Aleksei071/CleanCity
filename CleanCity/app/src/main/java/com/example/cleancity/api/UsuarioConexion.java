@@ -112,9 +112,7 @@ public class UsuarioConexion extends ConexionBase{
                 try{
                     String funciono = response.body().string();
                     callback.retornar(Boolean.parseBoolean(funciono));
-                } catch (Exception e){
-
-                }
+                } catch (Exception e){ }
             }
         });
     }

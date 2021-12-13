@@ -15,11 +15,10 @@ import com.example.cleancity.api.UsuarioConexion;
 import com.example.cleancity.interfaces.ICallBackUsuario;
 import com.example.cleancity.modelos.UsuarioModelo;
 
-import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
-public class LoginActivity extends AppCompatActivity implements Serializable {
+public class LoginActivity extends AppCompatActivity {
     private Button Registro, Login;
     private EditText username, pass;
     private String password;
@@ -56,7 +55,6 @@ public class LoginActivity extends AppCompatActivity implements Serializable {
                     public void retorno(UsuarioModelo resultado) {
                         Looper.prepare();
                         password = pass.getText().toString();
-                        Log.d("RESPONSE", resultado.toString() + " PASS= "+password);
                         if(resultado.getPass().equals(password)){
                             Intent I = new Intent(getBaseContext(), MainActivity.class);
                             I.putExtra("Usuario", resultado.getRut());
@@ -70,9 +68,7 @@ public class LoginActivity extends AppCompatActivity implements Serializable {
                     }
                 });
             } catch (Exception e) {
-                Looper.prepare();
                 Toast.makeText(getApplicationContext(), "Rut No Existe", Toast.LENGTH_LONG).show();
-                Looper.loop();
             }
         });
     }

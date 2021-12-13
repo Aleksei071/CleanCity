@@ -11,8 +11,8 @@ import com.example.cleancity.R;
 import java.util.Objects;
 
 public class HelpActivity extends AppCompatActivity {
-    ImageView ProfileImg;
-    String rut;
+    private ImageView ProfileImg;
+    private String rut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

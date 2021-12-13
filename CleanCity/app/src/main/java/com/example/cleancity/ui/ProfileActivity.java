@@ -20,11 +20,11 @@ import java.util.List;
 import java.util.Objects;
 
 public class ProfileActivity extends AppCompatActivity {
-    Button Delete, Edit;
-    RadioGroup genero;
-    EditText nombre, apellido, correo, sector, direccion, telefono, pass, pass2;
-    RadioButton mRB, fRB;
-    String rut;
+    private Button Delete, Edit;
+    private RadioGroup genero;
+    private EditText nombre, apellido, correo, sector, direccion, telefono, pass, pass2;
+    private RadioButton mRB, fRB;
+    private String rut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,13 +49,13 @@ public class ProfileActivity extends AppCompatActivity {
 
         setPerfil(rut);
 
-        Delete = findViewById(R.id.DeleteBtn);
-        Delete.setOnClickListener(v->{
-            eliminarPerfil(rut);
-        });
+        /**Delete = findViewById(R.id.DeleteBtn);
+         * Delete.setOnClickListener(v -> {
+         * eliminarPerfil(rut);
+         * });*/
 
         Edit = findViewById(R.id.EditBtn);
-        Edit.setOnClickListener(v-> {
+        Edit.setOnClickListener(v -> {
             editarPerfil(rut);
         });
     }
@@ -74,7 +74,6 @@ public class ProfileActivity extends AppCompatActivity {
 
             @Override
             public void retorno(UsuarioModelo resultado) {
-                //Log.d("RESPONSE", resultado.toString());
                 Looper.prepare();
                 if (resultado.getSexo().equals("Masculino")) {
                         mRB.setChecked(true);
@@ -96,7 +95,6 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void editarPerfil(String rut){
-        UsuarioConexion conn = new UsuarioConexion();
         UsuarioModelo user = new UsuarioModelo();
 
         if (pass.getText().toString().equals(pass2.getText().toString())) {
@@ -114,11 +112,7 @@ public class ProfileActivity extends AppCompatActivity {
             user.setPass(pass.getText().toString());
             user.setSexo(_sexo);
 
-            conn.editar(user, funciono -> { });
-            Toast.makeText(getApplicationContext(), "Actualizacion Exitosa", Toast.LENGTH_LONG).show();
-            Intent i = new Intent(getBaseContext(), MainActivity.class);
-            i.putExtra("Usuario", rut);
-            startActivity(i);
+            validacionEditar(user);
         } else {
             Toast.makeText(getApplicationContext(), "Las Contraseñas no Coiciden", Toast.LENGTH_LONG).show();
         }
@@ -131,12 +125,45 @@ public class ProfileActivity extends AppCompatActivity {
         user.setRut(rut);
 
         conn.eliminar(user, funciono -> { });
-
         Toast.makeText(getApplicationContext(), "Perfil Eliminado", Toast.LENGTH_LONG).show();
         Intent i = new Intent(getBaseContext(), LoginActivity.class);
-        i.putExtra("Usuario", rut);
         startActivity(i);
         finish();
+    }
+
+    private void validacionEditar(UsuarioModelo user){
+        if (nombre.length()==0){
+            nombre.requestFocus();
+            nombre.setError("Este campo no puede estar vacio");
+        } else if (apellido.length()==0) {
+            apellido.requestFocus();
+            apellido.setError("Este campo no puede estar vacio");
+        } else if (correo.length()==0) {
+            correo.requestFocus();
+            correo.setError("Este campo no puede estar vacio");
+        } else if (sector.length()==0) {
+            sector.requestFocus();
+            sector.setError("Este campo no puede estar vacio");
+        } else if (direccion.length()==0) {
+            direccion.requestFocus();
+            direccion.setError("Este campo no puede estar vacio");
+        } else if (telefono.length()==0) {
+            telefono.requestFocus();
+            telefono.setError("Este campo no puede estar vacio");
+        } else if (pass.length()==0) {
+            pass.requestFocus();
+            pass.setError("Este campo no puede estar vacio");
+        } else if (pass2.length()==0) {
+            pass2.requestFocus();
+            pass2.setError("Este campo no puede estar vacio");
+        } else {
+            UsuarioConexion conn = new UsuarioConexion();
+            conn.editar(user, funciono -> { });
+            Toast.makeText(getApplicationContext(), "Actualizacion Exitosa", Toast.LENGTH_LONG).show();
+            Intent i = new Intent(getBaseContext(), MainActivity.class);
+            i.putExtra("Usuario", rut);
+            startActivity(i);
+        }
     }
 
     @Override

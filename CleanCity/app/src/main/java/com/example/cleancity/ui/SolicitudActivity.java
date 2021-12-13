@@ -22,9 +22,9 @@ import java.util.List;
 import java.util.Objects;
 
 public class SolicitudActivity extends AppCompatActivity {
-    String rut, fecha;
-    EditText fullName, correo, telefono, sector, dir, tipo, desc;
-    Button Enviar;
+    private String rut, fecha;
+    private EditText fullName, correo, telefono, sector, dir, tipo, desc;
+    private Button Enviar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

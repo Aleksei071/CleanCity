@@ -22,10 +22,10 @@ import java.util.List;
 import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity {
-    Button Register;
-    RadioGroup genero;
-    CheckBox tos;
-    EditText rut, nombre, apellido, correo, sector, direccion, telefono, pass, pass2;
+    private Button Register;
+    private RadioGroup genero;
+    //private  CheckBox tos;
+    private EditText rut, nombre, apellido, correo, sector, direccion, telefono, pass, pass2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,9 +81,9 @@ public class RegisterActivity extends AppCompatActivity {
                             user.setDireccion(_direccion);
                             user.setTelefono(_telefono);
                             user.setPass(_pass);
-                            if (!tos.isChecked()) {
+                            /*if (!tos.isChecked()) {
                                 Toast.makeText(getApplicationContext(), "Debe Aceptar Los Términos y Condiciones", Toast.LENGTH_LONG).show();
-                            } else {
+                            } else {*/
                                 if (_pass.equals(_pass2)) {
                                     conn.insertar(user, funciono -> {
                                     });
@@ -94,7 +94,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     Toast.makeText(getApplicationContext(), "Las Contraseñas no Coiciden", Toast.LENGTH_LONG).show();
                                 }
                             }
-                        }
+                        //}
                     });
                 }
                 Looper.loop();
@@ -105,7 +105,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void setButtons(){
         Register = findViewById(R.id.registerBtn);
 
-        tos = findViewById(R.id.tosCheck);
+        //tos = findViewById(R.id.tosCheck);
         rut = findViewById(R.id.rutTextBox);
         nombre = findViewById(R.id.nameTextBox);
         apellido = findViewById(R.id.lastnameTextBox);
