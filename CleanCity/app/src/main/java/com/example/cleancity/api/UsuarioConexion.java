@@ -55,8 +55,12 @@ public class UsuarioConexion extends ConexionBase{
                 String respuesta = response.body().string();
                 try{
                     JSONArray lista = new JSONArray(respuesta);
+                    UsuarioModelo usuario = new UsuarioModelo();
 
-                    UsuarioModelo usuario = new UsuarioModelo(lista.getJSONObject(0));
+                    for (int i = 0; i < lista.length(); i++){
+                        UsuarioModelo user = new UsuarioModelo(lista.getJSONObject(i));
+                        usuario = user;
+                    }
 
                     callback.retorno(usuario);
                 }catch (Exception e){

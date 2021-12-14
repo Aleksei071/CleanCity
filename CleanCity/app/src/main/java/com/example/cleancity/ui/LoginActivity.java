@@ -46,16 +46,17 @@ public class LoginActivity extends AppCompatActivity {
 
             user.setRut(username.getText().toString());
 
-            try {
-                conn.buscar(user, new ICallBackUsuario() {
-                    @Override
-                    public void retornar(List<UsuarioModelo> resultado) { }
+            conn.buscar(user, new ICallBackUsuario() {
+                @Override
+                public void retornar(List<UsuarioModelo> resultado) { }
 
-                    @Override
-                    public void retorno(UsuarioModelo resultado) {
-                        Looper.prepare();
+                @Override
+                public void retorno(UsuarioModelo resultado) {
+                    Looper.prepare();
+                    Log.d("RESULTADO", resultado.toString());
+                    if (resultado.getRut() != null) {
                         password = pass.getText().toString();
-                        if(resultado.getPass().equals(password)){
+                        if (resultado.getPass().equals(password)) {
                             Intent I = new Intent(getBaseContext(), MainActivity.class);
                             I.putExtra("Usuario", resultado.getRut());
                             startActivity(I);
@@ -64,12 +65,12 @@ public class LoginActivity extends AppCompatActivity {
                         } else {
                             Toast.makeText(getApplicationContext(), "Contraseña Incorrecta", Toast.LENGTH_LONG).show();
                         }
-                        Looper.loop();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Rut No Existe", Toast.LENGTH_LONG).show();
                     }
-                });
-            } catch (Exception e) {
-                Toast.makeText(getApplicationContext(), "Rut No Existe", Toast.LENGTH_LONG).show();
-            }
+                    Looper.loop();
+                }
+            });
         });
     }
 }

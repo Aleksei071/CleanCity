@@ -118,7 +118,7 @@ public class ProfileActivity extends AppCompatActivity {
         }
     }
 
-    private void eliminarPerfil(String rut){
+    /*private void eliminarPerfil(String rut){
         UsuarioConexion conn = new UsuarioConexion();
         UsuarioModelo user = new UsuarioModelo();
 
@@ -129,7 +129,7 @@ public class ProfileActivity extends AppCompatActivity {
         Intent i = new Intent(getBaseContext(), LoginActivity.class);
         startActivity(i);
         finish();
-    }
+    }*/
 
     private void validacionEditar(UsuarioModelo user){
         if (nombre.length()==0){

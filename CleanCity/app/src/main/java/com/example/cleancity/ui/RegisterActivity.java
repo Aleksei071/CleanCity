@@ -3,6 +3,7 @@ package com.example.cleancity.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Looper;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -55,10 +56,12 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void registro(String _rut, String _nombre, String _apellido, String _sexo, String _correo, String _sector, String _direccion, String _telefono, String _pass, String _pass2){
-        UsuarioConexion conn = new UsuarioConexion();
         UsuarioModelo user = new UsuarioModelo();
+        UsuarioConexion conn = new UsuarioConexion();
 
         user.setRut(_rut);
+
+        Log.d("RESULTADO0", user.getRut());
 
         conn.buscar(user, new ICallBackUsuario() {
             @Override
@@ -67,9 +70,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void retorno(UsuarioModelo resultado) {
                 Looper.prepare();
-                if (resultado.getRut()!=null){
-                    Toast.makeText(getApplicationContext(), "Rut ya existe", Toast.LENGTH_LONG).show();
-                } else {
+                if (resultado.getRut() == null){
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -81,21 +82,22 @@ public class RegisterActivity extends AppCompatActivity {
                             user.setDireccion(_direccion);
                             user.setTelefono(_telefono);
                             user.setPass(_pass);
-                            /*if (!tos.isChecked()) {
-                                Toast.makeText(getApplicationContext(), "Debe Aceptar Los Términos y Condiciones", Toast.LENGTH_LONG).show();
-                            } else {*/
-                                if (_pass.equals(_pass2)) {
-                                    conn.insertar(user, funciono -> {
-                                    });
-                                    Toast.makeText(getApplicationContext(), "Registro Exitoso", Toast.LENGTH_LONG).show();
-                                    Intent i = new Intent(getBaseContext(), LoginActivity.class);
-                                    startActivity(i);
-                                } else {
-                                    Toast.makeText(getApplicationContext(), "Las Contraseñas no Coiciden", Toast.LENGTH_LONG).show();
-                                }
+                                /*if (!tos.isChecked()) {
+                                    Toast.makeText(getApplicationContext(), "Debe Aceptar Los Términos y Condiciones", Toast.LENGTH_LONG).show();
+                                } else {*/
+                            if (user.getPass().equals(_pass2)) {
+                                conn.insertar(user, funciono -> { });
+                                Toast.makeText(getApplicationContext(), "Registro Exitoso", Toast.LENGTH_LONG).show();
+                                Intent i = new Intent(getBaseContext(), LoginActivity.class);
+                                startActivity(i);
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Las Contraseñas no Coiciden", Toast.LENGTH_LONG).show();
                             }
+                        }
                         //}
-                    });
+                     });
+                } else {
+                    Toast.makeText(getApplicationContext(), "Rut ya existe", Toast.LENGTH_LONG).show();
                 }
                 Looper.loop();
             }

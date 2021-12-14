@@ -237,4 +237,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     .snippet(lista.get(i).getLat() + " " + lista.get(i).getLng()));
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent I = new Intent(getBaseContext(),LoginActivity.class);
+        startActivity(I);
+    }
 }
